@@ -3,7 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/keys.h>
 
 // LAYERS
 #define COL 0
@@ -100,9 +99,9 @@
         col_layer {
             label = "COLMAK";
             bindings = <
-            &kp Q       &kp W       &kp F       &kp P         &kp B       &kp J   &kp L        &kp U      &kp Y       &kp SQT
-            &hm LSHFT A &hm LCTRL R &hm LALT S  &hm LGUI T    &kp G       &kp M   &hm LGUI N   &hm LALT E &hm LCTRL I &hm LSHFT O
-            &kp Z       &kp X       &kp C       &kp D         &kp V       &kp K   &kp H        &kp COMMA  &kp DOT     &kp FSLH
+            &kp Q         &kp W       &kp F       &kp P         &kp B       &kp J   &kp L        &kp U      &kp Y       &kp SQT
+            &hm LSHFT A   &hm LCTRL R &hm LALT S  &hm LGUI T    &kp G       &kp M   &hm LGUI N   &hm LALT E &hm LCTRL I &hm LSHFT O
+            &lt MOU kp Z  &kp X       &kp C       &kp D         &kp V       &kp K   &kp H        &kp COMMA  &kp DOT     &lt MOU FSLH
                                     &kp ESC     &lt NAV SPACE &kp BSPC    &kp TAB &lt NUM RET
             >;
             trackball-bindings = <&tmv_coarse>;
@@ -128,7 +127,8 @@
             >;
         };
 
-        Mouse {
+        mou_layer {
+            label = "MOUSE";
             bindings = <
             &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
             &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
