@@ -38,7 +38,7 @@
   continue-list = <UNDERSCORE MINUS>;
 };
 
-/ {
+{
   chosen {
     zmk,matrix_transform = &five_column_transform;
   };
