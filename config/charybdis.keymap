@@ -99,9 +99,9 @@
         col_layer {
             label = "COLMAK";
             bindings = <
-            &kp Q       &kp W       &kp F       &kp P         &kp B       &kp J   &kp L        &kp U      &kp Y       &kp SQT
-            &hm LSHFT A &hm LCTRL R &hm LALT S  &hm LGUI T    &kp G       &kp M   &hm LGUI N   &hm LALT E &hm LCTRL I &hm LSHFT O
-            &lt MOU Z   &kp X       &kp C       &kp D         &kp V       &kp K   &kp H        &kp COMMA  &kp DOT     &lt MOU FSLH
+            &kp Q       &kp W       &kp F       &kp P         &kp B       &kp J   &kp L        &kp U       &kp Y       &kp SQT
+            &hm LGUI A  &hm LALT R  &hm LCTRL S &hm LSHFT T   &kp G       &kp M   &hm LSHFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
+            &lt MOU Z   &kp X       &kp C       &kp D         &kp V       &kp K   &kp H        &kp COMMA   &kp DOT     &lt MOU FSLH
                                     &kp ESC     &lt NAV SPACE &kp BSPC    &kp TAB &lt NUM RET
             >;
             trackball-bindings = <&tmv_coarse>;
@@ -111,7 +111,7 @@
             label = "ARROWS";
             bindings = <
             &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)     &caps_word &kp HOME   &kp PG_DN    &kp PG_UP    &kp END
-            &kp LSHFT  &kp LCTRL  &kp LALT   &kp LGUI   &kp U_CLIP     &kp U_SHOT &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
+            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp U_CLIP     &kp U_SHOT &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
             &kp U_UNDO &kp U_CUT  &kp U_COPY &kp U_PSTE &kp U_REDO     &kp C_PP   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
                                   &none      &none      &reset         &kp RET    &kp BSPC   &kp DEL
             >;
@@ -131,9 +131,9 @@
             label = "MOUSE";
             bindings = <
             &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
-            &kp LSHFT   &kp LCTRL &kp LALT   &kp LGUI  &trans       &trans  &trans  &trans  &trans     &trans
-            &mkp MCLK   &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &mkp LCLK
-                                  &mkp LCLK  &trans    &mkp RCLK    &trans  &trans
+            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT &trans       &trans  &trans  &trans  &trans     &trans
+            &mkp MCLK   &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
+                                  &mkp LCLK  &trans    &mkp RCLK    &trans  &mkp LCLK
             >;
         };
     };
