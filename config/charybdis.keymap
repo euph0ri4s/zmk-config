@@ -8,7 +8,7 @@
 #define COL 0
 #define NAV 1
 #define NUM 2
-#define MOU 4
+#define MOU 3
 
 // MACROS
 #define U_UNDO  LG(Z)
