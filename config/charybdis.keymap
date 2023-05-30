@@ -99,9 +99,9 @@
         col_layer {
             label = "COLMAK";
             bindings = <
-            &kp Q         &kp W       &kp F       &kp P         &kp B       &kp J   &kp L        &kp U      &kp Y       &kp SQT
-            &hm LSHFT A   &hm LCTRL R &hm LALT S  &hm LGUI T    &kp G       &kp M   &hm LGUI N   &hm LALT E &hm LCTRL I &hm LSHFT O
-            &lt MOU kp Z  &kp X       &kp C       &kp D         &kp V       &kp K   &kp H        &kp COMMA  &kp DOT     &lt MOU FSLH
+            &kp Q       &kp W       &kp F       &kp P         &kp B       &kp J   &kp L        &kp U      &kp Y       &kp SQT
+            &hm LSHFT A &hm LCTRL R &hm LALT S  &hm LGUI T    &kp G       &kp M   &hm LGUI N   &hm LALT E &hm LCTRL I &hm LSHFT O
+            &lt MOU Z   &kp X       &kp C       &kp D         &kp V       &kp K   &kp H        &kp COMMA  &kp DOT     &lt MOU FSLH
                                     &kp ESC     &lt NAV SPACE &kp BSPC    &kp TAB &lt NUM RET
             >;
             trackball-bindings = <&tmv_coarse>;
@@ -131,7 +131,7 @@
             label = "MOUSE";
             bindings = <
             &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
-            &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
+            &kp LSHFT   &kp LCTRL &kp LALT   &kp LGUI  &trans       &trans  &trans  &trans  &trans     &trans
             &mkp MCLK   &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &mkp LCLK
                                   &mkp LCLK  &trans    &mkp RCLK    &trans  &trans
             >;
