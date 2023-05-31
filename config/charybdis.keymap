@@ -99,10 +99,10 @@
         col_layer {
             label = "COLMAK";
             bindings = <
-            &kp Q       &kp W       &kp F       &kp P         &kp B       &kp J   &kp L        &kp U       &kp Y       &kp SQT
-            &hm LGUI A  &hm LALT R  &hm LCTRL S &hm LSHFT T   &kp G       &kp M   &hm LSHFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
-            &lt MOU Z   &kp X       &kp C       &kp D         &kp V       &kp K   &kp H        &kp COMMA   &kp DOT     &lt MOU FSLH
-                                    &kp ESC     &lt NAV SPACE &kp BSPC    &kp TAB &lt NUM RET
+            &kp Q       &kp W       &kp F       &kp P         &kp B       &kp J     &kp L        &kp U       &kp Y       &kp SQT
+            &hm LGUI A  &hm LALT R  &hm LCTRL S &hm LSHFT T   &kp G       &kp M     &hm LSHFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
+            &lt MOU Z   &kp X       &kp C       &kp D         &kp V       &kp K     &kp H        &kp COMMA   &kp DOT     &lt MOU FSLH
+                                    &kp ESC     &lt NAV SPACE &kp BSPC    &kp TAB   &lt NUM RET
             >;
             trackball-bindings = <&tmv_coarse>;
         };
@@ -123,7 +123,7 @@
             &bt BT_SEL 0 &kp F9 &kp F10 &kp F11   &kp F12     &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp PLUS
             &bt BT_SEL 1 &kp F5 &kp F6  &kp F7    &kp F8      &kp ASTRK  &kp N4 &kp N5 &kp N6 &kp MINUS
             &bt BT_SEL 2 &kp F1 &kp F2  &kp F3    &kp F4      &kp N0     &kp N1 &kp N2 &kp N3 &kp FSLH
-                                &kp ESC &kp SPACE &kp TAB     &bt BT_CLR &none  &none
+                                &kp ESC &kp SPACE &kp BSPC    &bt BT_CLR &none  &none
             >;
         };
 
