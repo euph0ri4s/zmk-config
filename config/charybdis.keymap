@@ -111,19 +111,19 @@
             label = "ARROWS";
             bindings = <
             &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)     &caps_word &kp HOME   &kp PG_DN    &kp PG_UP    &kp END
-            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp U_CLIP     &kp U_SHOT &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
+            &kp LGUI   &mkp RCLK  &mkp MCLK  &mkp LCLK  &kp U_CLIP     &kp U_SHOT &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
             &kp U_UNDO &kp U_CUT  &kp U_COPY &kp U_PSTE &kp U_REDO     &kp C_PP   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
-                                  &none      &none      &reset         &kp RET    &kp BSPC   &kp DEL
+                                  &none      &none      &reset         &kp RET    &kp BSPC   
             >;
         };
 
         num_layer {
             label = "NUMPAD";
             bindings = <
-            &bt BT_SEL 0 &kp F9 &kp F10 &kp F11   &kp F12     &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp PLUS
-            &bt BT_SEL 1 &kp F5 &kp F6  &kp F7    &kp F8      &kp ASTRK  &kp N4 &kp N5 &kp N6 &kp MINUS
-            &bt BT_SEL 2 &kp F1 &kp F2  &kp F3    &kp F4      &kp N0     &kp N1 &kp N2 &kp N3 &kp FSLH
-                                &kp ESC &kp SPACE &kp BSPC    &bt BT_CLR &none  &none
+            &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp PLUS          &BT_SEL 0 &kp F9 &kp F10 &kp F11   &kp F12 
+            &kp ASTRK  &kp N4 &kp N5 &kp N6 &kp MINUSbt       &BT_SEL 1 &kp F5 &kp F6  &kp F7    &kp F8 
+            &kp N0     &kp N1 &kp N2 &kp N3 &kp FSLH bt       &BT_SEL 2 &kp F1 &kp F2  &kp F3    &kp F4 
+                                &kp ESC &kp SPACE &kp BSPC    &bt BT_CLR &none
             >;
         };
 
@@ -131,9 +131,9 @@
             label = "MOUSE";
             bindings = <
             &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
-            &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT &trans       &trans  &trans  &trans  &trans     &trans
-            &mkp MCLK   &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
-                                  &mkp LCLK  &trans    &mkp RCLK    &trans  &mkp LCLK
+            &kp LGUI    &kp LALT  &kp LCTRL  &kp LSHFT &trans       &trans  &trans  &trans  &trans     &trans
+            &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
+                                  &mkp RCLK  &mkp LCLK &mkp MCLK    &mkp MCLK  &mkp LCLK
             >;
         };
     };
