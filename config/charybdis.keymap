@@ -120,10 +120,10 @@
         num_layer {
             label = "NUMPAD";
             bindings = <
-            &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp PLUS          &BT_SEL 0 &kp F9 &kp F10 &kp F11   &kp F12 
-            &kp ASTRK  &kp N4 &kp N5 &kp N6 &kp MINUSbt       &BT_SEL 1 &kp F5 &kp F6  &kp F7    &kp F8 
-            &kp N0     &kp N1 &kp N2 &kp N3 &kp FSLH bt       &BT_SEL 2 &kp F1 &kp F2  &kp F3    &kp F4 
-                                &kp ESC &kp SPACE &kp BSPC    &bt BT_CLR &none
+            &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp PLUS          &BT_SEL 0 &kp F9 &kp F10 &kp F11   &kp F12
+            &kp ASTRK  &kp N4 &kp N5 &kp N6 &kp MINUSbt       &BT_SEL 1 &kp F5 &kp F6  &kp F7    &kp F8
+            &kp N0     &kp N1 &kp N2 &kp N3 &kp FSLH bt       &BT_SEL 2 &kp F1 &kp F2  &kp F3    &kp F4
+                              &kp ESC &kp SPACE &kp BSPC      &bt BT_CLR &none
             >;
         };
 
