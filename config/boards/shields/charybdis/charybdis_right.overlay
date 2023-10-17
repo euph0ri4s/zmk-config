@@ -31,7 +31,7 @@
 	//sck-pin = <8>;
 	dipo = <10>; //mosi-pin = <10>;
 	dopo = <9>;  //miso-pin = <9>; // same as mosi (3-wire spi)
-	//cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+	cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 };
 
 &trackball {
