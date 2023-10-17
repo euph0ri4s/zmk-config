@@ -40,7 +40,7 @@
 	};
 };
 
-&qspi {
+&spi0 {
 	compatible = "nordic,nrf-spim";
 	status = "disabled";
 
