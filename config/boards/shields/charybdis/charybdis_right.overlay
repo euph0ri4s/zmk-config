@@ -26,7 +26,7 @@
 };
 
 // trackball bus
-&spi0 {
+&qspi {
 	status = "okay"; //okay
 	sck-pin = <8>;
 	mosi-pin = <10>;
