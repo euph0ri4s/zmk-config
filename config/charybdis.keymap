@@ -159,7 +159,7 @@
 &trans      &trans        &trans        &to LAYER_GAME  &none    &none     &trans        &trans        &trans        &bt BT_CLR
             &mkp MCLK     &mkp LCLK     &mkp RCLK       &mkp RCLK  &mkp LCLK
             >;
-            trackball-bindings = <&tsl>;
+            trackball-bindings = <&tsl_fine>;
         };
 
         game_layer {
