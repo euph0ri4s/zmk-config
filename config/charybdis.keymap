@@ -19,7 +19,7 @@
 #define COMBO(NAME, LAYER, TIMEOUT, KEYPOS) \
     combo_##NAME { \
         layers = <LAYER>; \
-        timeout-ms = <40>; \
+        timeout-ms = <TIMEOUT>; \
         key-positions = <KEYPOS>; \
         bindings = <&kp NAME>; \
     };
