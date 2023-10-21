@@ -22,3 +22,7 @@ config MOUSE_LAYER_INDEX
 config SCROLL_LAYER_INDEX
 	int "Index of scroll layer"
 	default 5
+
+config MOUSE_LAYER_ACTIVE_MS
+	int "Mouse layer active time in ms"
+	default 400
