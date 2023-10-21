@@ -1,140 +1,324 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/mouse.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-
+#include <dt-bindings/zmk/mouse.h>
 // LAYERS
-#define COL 0
-#define NAV 1
-#define NUM 2
-#define MOU 3
+
+#define LAYER_BASE  0
+#define LAYER_NAV   1
+#define LAYER_NUM   2
+#define LAYER_SYM   3
+#define LAYER_SYM2  4
+#define LAYER_BT    5
+#define LAYER_GAME  6
+#define LAYER_Gplus 7
 
 // MACROS
-#define U_UNDO  LG(Z)
-#define U_CUT   LG(X)
-#define U_COPY  LG(C)
-#define U_PSTE  LG(V)
-#define U_REDO  LS(LG(Z))
-#define U_CLIP  LC(LG(C))
-#define U_SHOT  LS(LG(N4))
-
-// CONFIGURATION
-#define COMBO(NAME, KEYPOS) \
-  combo_##NAME { \
-      timeout-ms = <40>; \
-      key-positions = <KEYPOS>; \
-      bindings = <&kp NAME>; \
-  };
+// CONFIGRATION
+#define COMBO(NAME, LAYER, TIMEOUT, KEYPOS) \
+    combo_#NAME { \
+        layers = <LAYER>; \
+        timeout-ms = <40>; \
+        key-positions = <KEYPOS>; \
+        bindings = <&kp NAME>; \
+    };
 
 &lt {
-  flavor = "tap-preferred";
-  tapping-term-ms = <200>;
-  quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
 };
 
-&caps_word {
-  continue-list = <UNDERSCORE MINUS>;
-};
+// define timeout for some functions
+//#if !defined TIMEOUT_COMBO_2
+//#define TIMEOUT_COMBO_2 175
+//#endif
+//#if !defined TIMEOUT_COMBO_3
+//#define TIMEOUT_COMBO_3 200
+//#endif
+//#if !defined TIMEOUT_LAYER_HOLD
+//#define TIMEOUT_LAYER_HOLD 200
+//#endif
+// homerow and combos
 
-/ {
-  chosen {
-    zmk,matrix_transform = &five_column_transform;
-  };
-};
-
-// KEYMAP
 / {
     behaviors {
-      hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <0>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-      };
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homerow_mods";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
-    
-    combos {
-      compatible = "zmk,combos";
-      
-      // Left-hand combos
-      COMBO(AT_SIGN, 1 2)
-      COMBO(LEFT_BRACE, 2 3)
-      COMBO(EXCLAMATION, 1 11)
-      COMBO(HASH, 2 12)
-      COMBO(DOLLAR, 3 13)
-      COMBO(GRAVE, 10 11)
-      COMBO(COLON, 11 12)
-      COMBO(LEFT_PARENTHESIS, 12 13)
-      COMBO(PERCENT, 11 21)
-      COMBO(CARET, 12 22)
-      COMBO(AMPERSAND, 13 23)
-      COMBO(TILDE, 20 21)
-      COMBO(SEMICOLON, 21 22)
-      COMBO(LEFT_BRACKET, 22 23) 
 
-      // Right-hand combos
-      COMBO(RIGHT_BRACE, 6 7)
-      COMBO(DOUBLE_QUOTES, 7 8)
-      COMBO(EQUAL, 6 16)
-      COMBO(PIPE, 7 17)
-      COMBO(BACKSLASH, 8 18)
-      COMBO(RIGHT_PARENTHESIS, 16 17)
-      COMBO(MINUS, 17 18)
-      COMBO(KP_PLUS, 18 19)
-      COMBO(ASTERISK, 16 26)
-      COMBO(LESS_THAN, 17 27)
-      COMBO(GREATER_THAN, 18 28)
-      COMBO(RIGHT_BRACKET, 26 27)
-      COMBO(UNDERSCORE, 27 28)
-      COMBO(QUESTION, 28 29)
-    };
+    combos {
+        compatible = "zmk,combos";
+
+        // Left hand combos
+
+        combo_Q(0,55,10 12)
+        combo_W(0,55,10 11)
+        combo_F(0,55,11 12)
+        combo_P(0,55,12 13)
+        combo_B(0,55,11 13)
+        combo_G(0,50,10 13)
+        combo_V(0,60,11 23)
+        combo_COMMA(0,50,16 18) 
+        combo_DOT(0,50,16 26)
+        combo_U(0,50,16 17)
+        combo_Y(0,60,17 18)
+        combo_MINUS(0,50,17 18 19)
+        combo_M(0,50,16 19)
+        combo_FSLH(0,35,26 17)
+        combo_LBKT(3,50,12 13)
+        combo_RBKT(3,50,16 17)
+        combo_LBRC(3,50,22 23)
+        combo_RBRC(3,50,26 27)
+        combo_LPAR(3,50,21 22)
+        combo_RPAR(3,50,27 28)
+        combo_CAPS(0,50,28 29)
+        combo_F9(2,50,18 19)
+        combo_F10(2,50,26 27)
+        combo_F11(2,50,28 29)
+        combo_F12(2,50,28 29)
+        combo_N7(2,50,22 23)
+        combo_N8(2,50,22 24)
+        combo_N9(2,50,23 24)
+        combo_DEL(0,50,26 28)
+        combo_ESC(0,50,20,21)
+        combo_ENTER(0,50,26 27)
+        };
 
     keymap {
         compatible = "zmk,keymap";
 
-        col_layer {
-            label = "COLMAK";
+        base_layer {
+            label = "LAYER_BASE";
             bindings = <
-            &kp Q       &kp W       &kp F       &kp P         &kp B       &kp J     &kp L        &kp U       &kp Y       &kp SQT
-            &hm LGUI A  &hm LALT R  &hm LCTRL S &hm LSHFT T   &kp G       &kp M     &hm LSHFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
-            &lt MOU Z   &kp X       &kp C       &kp D         &kp V       &kp K     &kp H        &kp COMMA   &kp DOT     &lt MOU FSLH
-                                    &kp ESC     &lt NAV SPACE &kp BSPC    &kp TAB   &lt NUM RET
+&none           &none       &none         &none         &none    &none  &none         &none       &none       &none      
+&hm LGUI A      &hm LALT R  &hm LCTRL S   &hm LSHIFT T  &none    &none  &hm LSHIFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
+&lt LAYER_BT Z  &kp X       &kp C                &kp D  &none    &none  &kp H         &kp J       &kp K       &lt LAYER_SYM2 L
+          &none  &lt LAYER_NAV SPACE  &lt LAYER_SYM BACKSPACE    &lt LAYER_BT TAB     &lt LAYER_NUM ENTER
             >;
+
             trackball-bindings = <&tmv_coarse>;
         };
 
         nav_layer {
-            label = "ARROWS";
+            label = "LAYER_NAV";
             bindings = <
-            &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)     &caps_word &kp HOME   &kp PG_DN    &kp PG_UP    &kp END
-            &kp LGUI   &mkp RCLK  &mkp MCLK  &mkp LCLK  &kp U_CLIP     &kp U_SHOT &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
-            &kp U_UNDO &kp U_CUT  &kp U_COPY &kp U_PSTE &kp U_REDO     &kp C_PP   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
-                                  &none      &none      &none          &kp RET    &kp BSPC   
+&none     &none   &none     &none        &none    &none     &none    &none     &none       &none      
+&kp LEFT  &kp UP  &kp DOWN  &kp RIGHT    &none    &none     &none    &kp LC(HOME)  &kp HOME  &kp END  &kp LC(END)
+&kp L     &kp K   &kp J     &kp H        &kp LEFT &none     &none    &kp DOWN  &kp UP   &kp RIGHT
+                            &trans       &trans   &trans    &trans   &trans
             >;
         };
 
-        num_layer {
-            label = "NUMPAD";
+        number_layer {
+            label = "LAYER_NUM";
             bindings = <
-            &bt BT_SEL 0 &kp F9 &kp F10 &kp F11   &kp F12     &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp PLUS
-            &bt BT_SEL 1 &kp F5 &kp F6  &kp F7    &kp F8      &kp ASTRK  &kp N4 &kp N5 &kp N6 &kp MINUS
-            &bt BT_SEL 2 &kp F1 &kp F2  &kp F3    &kp F4      &kp N0     &kp N1 &kp N2 &kp N3 &kp FSLH
-                                &kp ESC &kp SPACE &kp BSPC    &bt BT_CLR &none  &none
+&none    &none   &none   &none  &none    &none     &none    &none     &none       &none      
+&kp DOT  &kp N4  &kp N5  &kp N6 &none    &none     &kp F5   &kp F6    &kp F7      &kp F8
+&kp N0   &kp N1  &kp N2  &kp N3 &none    &none     &kp F1   &kp F2    &kp F3      &kp F4
+                 &trans  &trans &trans   &trans  &trans
             >;
         };
 
-        mou_layer {
-            label = "MOUSE";
+        symbol_layer {
+            label = "LAYER_SYM";
             bindings = <
-            &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
-            &kp LGUI    &kp LALT  &kp LCTRL  &kp LSHFT &trans       &trans  &trans  &trans  &trans     &trans
-            &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
-                                  &mkp RCLK  &mkp LCLK &mkp MCLK    &mkp MCLK  &mkp LCLK
+&none      &none      &none     &none      &none    &none     &none     &none     &none     &none      
+&kp EXCL   &kp AT     &kp HASH  &kp DLLR   &none    &none     &kp AMPS  &kp STAR  &kp DQT   &kp SQT
+&kp UNDER  &kp EQUAL  &kp PLUS  &kp PRCNT  &none    &none     &kp BSLH  &kp PIPE  &kp SEMI  &kp COLON
+                      &trans    &trans     &trans   &trans    &trans
+            >;
+        };
+
+        symbol2_layer {
+            label = "LAYER_SYM2";
+            bindings = <
+&none         &none  &none   &none     &none    &none     &none     &none           &none             &none      
+&kp GRAVE     &trans &trans  &kp INT5  &none    &none     &kp INT4  &trans          &trans            &trans
+&kp LS(INT1)  &trans &trans  &trans    &none    &none     &kp INT3  &kp LESS_than   &kp GRRATER_THAN  &trans
+                     &torans &trans    &trans   &trans    &trans
+            >;
+        };
+
+        bt_layer {
+            label = "LAYER_BT";
+            bindings = <
+&none       &none         &none         &none           &none    &none     &none         &none         &none         &none      
+&bt BT_CLR  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1    &none    &none     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans
+&trans      &trans        &trans        &to LAYER_GAME  $none    &none     &trans        &trans        &trans        &bt BT_CLR
+            &mkp MCLK     &mkp LCLK     &mkp RCLK       &mkp RCLK  &mkp LCLK
+            >;
+        };
+
+        game_layer {
+            label = "LAYER_GAME";
+            bindings = <
+&none      &none  &none      &none  &none              &none     &none   &none   &none   &none      
+&kp LSHFT  &kp A  &kp W      &kp D  &none              &none     &kp R   &kp Q   &kp E   &kp M
+&kp LCTRL  &kp E  &kp S      &kp F  &none              &none     &kp N1  &kp N2  &kp N3  &kp N4
+        &kp LALT  &kp SPACE  &lt LAYER_Gplus ESC       &mkp RCLK  &mkp LCLK
+            >;
+        };
+
+        game+_layer {
+            label = "LAYER_Gplus";
+            bindings = <
+&none    &none   &none   &none     &none      &none   &none   &none   &none   &none      
+&kp N1   &kp N2  &kp N3  &kp N4    &none      &none   &kp N   &kp E   &kp I   &kp O
+&kp TAB  &kp V   &kp C   &kp T     &none      &none   &kp F1  &kp F2  &kp F3  &to 0
+                 &trans  &trans    &trans     &trans  &trans
             >;
         };
     };
 };
+
+
+// #include <behaviors.dtsi>
+// #include <dt-bindings/zmk/mouse.h>
+// #include <dt-bindings/zmk/keys.h>
+// #include <dt-bindings/zmk/bt.h>
+// #include <dt-bindings/zmk/outputs.h>
+// 
+// // LAYERS
+// #define COL 0
+// #define NAV 1
+// #define NUM 2
+// #define MOU 3
+// 
+// // MACROS
+// #define U_UNDO  LG(Z)
+// #define U_CUT   LG(X)
+// #define U_COPY  LG(C)
+// #define U_PSTE  LG(V)
+// #define U_REDO  LS(LG(Z))
+// #define U_CLIP  LC(LG(C))
+// #define U_SHOT  LS(LG(N4))
+// 
+// // CONFIGURATION
+// #define COMBO(NAME, KEYPOS) \
+//   combo_##NAME { \
+//       timeout-ms = <40>; \
+//       key-positions = <KEYPOS>; \
+//       bindings = <&kp NAME>; \
+//   };
+// 
+// &lt {
+//   flavor = "tap-preferred";
+//   tapping-term-ms = <200>;
+//   quick-tap-ms = <0>;
+// };
+// 
+// &caps_word {
+//   continue-list = <UNDERSCORE MINUS>;
+// };
+// 
+// / {
+//   chosen {
+//     zmk,matrix_transform = &five_column_transform;
+//   };
+// };
+// 
+// // KEYMAP
+// / {
+//     behaviors {
+//       hm: homerow_mods {
+//         compatible = "zmk,behavior-hold-tap";
+//         label = "HOMEROW_MODS";
+//         #binding-cells = <2>;
+//         tapping-term-ms = <200>;
+//         quick_tap_ms = <0>;
+//         flavor = "tap-preferred";
+//         bindings = <&kp>, <&kp>;
+//       };
+//     };
+//     
+//     combos {
+//       compatible = "zmk,combos";
+//       
+//       // Left-hand combos
+//       COMBO(AT_SIGN, 1 2)
+//       COMBO(LEFT_BRACE, 2 3)
+//       COMBO(EXCLAMATION, 1 11)
+//       COMBO(HASH, 2 12)
+//       COMBO(DOLLAR, 3 13)
+//       COMBO(GRAVE, 10 11)
+//       COMBO(COLON, 11 12)
+//       COMBO(LEFT_PARENTHESIS, 12 13)
+//       COMBO(PERCENT, 11 21)
+//       COMBO(CARET, 12 22)
+//       COMBO(AMPERSAND, 13 23)
+//       COMBO(TILDE, 20 21)
+//       COMBO(SEMICOLON, 21 22)
+//       COMBO(LEFT_BRACKET, 22 23) 
+// 
+//       // Right-hand combos
+//       COMBO(RIGHT_BRACE, 6 7)
+//       COMBO(DOUBLE_QUOTES, 7 8)
+//       COMBO(EQUAL, 6 16)
+//       COMBO(PIPE, 7 17)
+//       COMBO(BACKSLASH, 8 18)
+//       COMBO(RIGHT_PARENTHESIS, 16 17)
+//       COMBO(MINUS, 17 18)
+//       COMBO(KP_PLUS, 18 19)
+//       COMBO(ASTERISK, 16 26)
+//       COMBO(LESS_THAN, 17 27)
+//       COMBO(GREATER_THAN, 18 28)
+//       COMBO(RIGHT_BRACKET, 26 27)
+//       COMBO(UNDERSCORE, 27 28)
+//       COMBO(QUESTION, 28 29)
+//     };
+// 
+//     keymap {
+//         compatible = "zmk,keymap";
+// 
+//         col_layer {
+//             label = "COLMAK";
+//             bindings = <
+//             &kp Q       &kp W       &kp F       &kp P         &kp B       &kp J     &kp L        &kp U       &kp Y       &kp SQT
+//             &hm LGUI A  &hm LALT R  &hm LCTRL S &hm LSHFT T   &kp G       &kp M     &hm LSHFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
+//             &lt MOU Z   &kp X       &kp C       &kp D         &kp V       &kp K     &kp H        &kp COMMA   &kp DOT     &lt MOU FSLH
+//                                     &kp ESC     &lt NAV SPACE &kp BSPC    &kp TAB   &lt NUM RET
+//             >;
+//             trackball-bindings = <&tmv_coarse>;
+//         };
+// 
+//         nav_layer {
+//             label = "ARROWS";
+//             bindings = <
+//             &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)     &caps_word &kp HOME   &kp PG_DN    &kp PG_UP    &kp END
+//             &kp LGUI   &mkp RCLK  &mkp MCLK  &mkp LCLK  &kp U_CLIP     &kp U_SHOT &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
+//             &kp U_UNDO &kp U_CUT  &kp U_COPY &kp U_PSTE &kp U_REDO     &kp C_PP   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
+//                                   &none      &none      &none          &kp RET    &kp BSPC   
+//             >;
+//         };
+// 
+//         num_layer {
+//             label = "NUMPAD";
+//             bindings = <
+//             &bt BT_SEL 0 &kp F9 &kp F10 &kp F11   &kp F12     &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp PLUS
+//             &bt BT_SEL 1 &kp F5 &kp F6  &kp F7    &kp F8      &kp ASTRK  &kp N4 &kp N5 &kp N6 &kp MINUS
+//             &bt BT_SEL 2 &kp F1 &kp F2  &kp F3    &kp F4      &kp N0     &kp N1 &kp N2 &kp N3 &kp FSLH
+//                                 &kp ESC &kp SPACE &kp BSPC    &bt BT_CLR &none  &none
+//             >;
+//         };
+// 
+//         mou_layer {
+//             label = "MOUSE";
+//             bindings = <
+//             &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
+//             &kp LGUI    &kp LALT  &kp LCTRL  &kp LSHFT &trans       &trans  &trans  &trans  &trans     &trans
+//             &trans      &trans    &trans     &trans    &trans       &trans  &trans  &trans  &trans     &trans
+//                                   &mkp RCLK  &mkp LCLK &mkp MCLK    &mkp MCLK  &mkp LCLK
+//             >;
+//         };
+//     };
+// };
+// 
