@@ -108,7 +108,7 @@
           &none  &lt LAYER_NAV SPACE  &lt LAYER_SYM BACKSPACE    &lt LAYER_BT TAB     &lt LAYER_NUM ENTER
             >;
 
-            trackball-bindings = <&tmv>;
+            trackball-bindings = <&tmv_ocarse>;
         };
 
         nav_layer {
