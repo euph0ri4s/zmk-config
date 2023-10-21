@@ -64,18 +64,18 @@
         compatible = "zmk,combos";
 
         COMBO(Q, 0, 55, 10 12)
-        COMBO(W, 0, 55, 10 11)
+        COMBO(W, 0, 55, 10 20)
         COMBO(F, 0, 55, 11 12)
         COMBO(P, 0, 55, 12 13)
         COMBO(B, 0, 55, 11 13)
         COMBO(G, 0, 50, 23 13)
-        COMBO(V, 0, 60, 11 23)
+        COMBO(V, 0, 60, 22 23)
         COMBO(COMMA, 0, 50, 16 18) 
         COMBO(DOT, 0, 50, 16 27)
-        COMBO(U, 0, 50, 16 17)
+        COMBO(U, 0, 50, 16 26)
         COMBO(Y, 0, 60, 17 18)
         COMBO(MINUS, 0, 50, 17 18 19)
-        COMBO(M, 0, 50, 16 26)
+        COMBO(M, 0, 50, 19 29)
         COMBO(FSLH, 0, 35, 26 17)
         COMBO(LBKT, 3, 50, 12 13)
         COMBO(RBKT, 3, 50, 16 17)
@@ -114,10 +114,10 @@
         nav_layer {
             label = "LAYER_NAV";
             bindings = <
-&none     &none   &none     &none        &none    &none     &none    &none     &none       &none      
-&kp LEFT  &kp UP  &kp DOWN  &kp RIGHT    &none    &none     &none    &kp LC(HOME)  &kp HOME  &kp END  &kp LC(END)
-&kp L     &kp K   &kp J     &kp H        &kp LEFT &none     &none    &kp DOWN  &kp UP   &kp RIGHT
-                            &trans       &trans   &trans    &trans   &trans
+&none     &none      &none     &none        &none    &none     &none           &none     &none     &none      
+&tsl      &mkp RCLK  &mkp MCLK &mkp LCLK    &none    &none     &kp LEFT        &kp UP    &kp DOWN  &kp RIGHT
+&kp L     &kp K      &kp J     &kp H        &none    &none     &kp LC(HOME)    &kp HOME  &kp END   &kp LC(END)
+                     &trans    &trans       &trans   &trans    &trans
             >;
         };
 
@@ -159,6 +159,7 @@
 &trans      &trans        &trans        &to LAYER_GAME  &none    &none     &trans        &trans        &trans        &bt BT_CLR
             &mkp MCLK     &mkp LCLK     &mkp RCLK       &mkp RCLK  &mkp LCLK
             >;
+            trackball-bindings = <&tsl>;
         };
 
         game_layer {
