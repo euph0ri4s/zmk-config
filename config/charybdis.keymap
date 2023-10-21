@@ -17,7 +17,7 @@
 // MACROS
 // CONFIGRATION
 #define COMBO(NAME, LAYER, TIMEOUT, KEYPOS) \
-    combo_#NAME { \
+    combo_##NAME { \
         layers = <LAYER>; \
         timeout-ms = <40>; \
         key-positions = <KEYPOS>; \
@@ -57,8 +57,6 @@
 
     combos {
         compatible = "zmk,combos";
-
-        // Left hand combos
 
         combo(Q,0,55,10 12)
         combo(W,0,55,10 11)
