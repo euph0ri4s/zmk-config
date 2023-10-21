@@ -108,14 +108,14 @@
           &none  &lt LAYER_NAV SPACE  &lt LAYER_SYM BACKSPACE    &lt LAYER_BT TAB     &lt LAYER_NUM ENTER
             >;
 
-            trackball-bindings = <&tmv_ocarse>;
+            trackball-bindings = <&tmv_coarse>;
         };
 
         nav_layer {
             label = "LAYER_NAV";
             bindings = <
 &none     &none      &none     &none        &none    &none     &none           &none     &none     &none      
-&trans    &mkp RCLK  &mkp MCLK &mkp LCLK    &none    &none     &kp LEFT        &kp UP    &kp DOWN  &kp RIGHT
+&trans    &mkp RCLK  &mkp MCLK &mkp LCLK    &none    &none     &kp LEFT        &kp DOWN  &kp UP    &kp RIGHT
 &kp L     &kp K      &kp J     &kp H        &none    &none     &kp LC(HOME)    &kp HOME  &kp END   &kp LC(END)
                      &trans    &trans       &trans   &trans    &trans
             >;
