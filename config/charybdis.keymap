@@ -87,7 +87,7 @@
         COMBO(N8, 2, 50, 22 24)
         COMBO(N9, 2, 50, 23 24)
         COMBO(DEL, 0, 50, 26 28)
-        COMBO(ESC, 0, 50, 20,21)
+        COMBO(ESC, 0, 50, 20 21)
         COMBO(ENTER, 0, 50, 26 27)
     };
 
