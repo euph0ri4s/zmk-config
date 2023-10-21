@@ -141,8 +141,8 @@
             bindings = <
 &none         &none  &none   &none     &none    &none     &none     &none           &none             &none      
 &kp GRAVE     &trans &trans  &kp INT5  &none    &none     &kp INT4  &trans          &trans            &trans
-&kp LS(INT1)  &trans &trans  &trans    &none    &none     &kp INT3  &kp LESS_than   &kp GRRATER_THAN  &trans
-                     &torans &trans    &trans   &trans    &trans
+&kp LS(INT1)  &trans &trans  &trans    &none    &none     &kp INT3  &kp LESS_THAN   &kp GRRATER_THAN  &trans
+                     &trans  &trans    &trans   &trans    &trans
             >;
         };
 
