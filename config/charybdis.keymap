@@ -64,7 +64,7 @@
         compatible = "zmk,combos";
 
         COMBO(Q, 0, 55, 10 12)
-        COMBO(W, 0, 55, 10 11)
+        COMBO(W, 0, 55, 10 13)
         COMBO(F, 0, 55, 11 12)
         COMBO(P, 0, 55, 12 13)
         COMBO(B, 0, 55, 11 13)
