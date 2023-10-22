@@ -27,15 +27,11 @@
 
 &lt {
     flavor = "tap-preferred";
-    tapping-term-ms = <200>;
+    tapping-term-ms = <100>;
     quick-tap-ms = <0>;
 };
 
-&ltalpha {
-    flavor = "tap-preferred";
-    tapping-term-ms = <50>;
-    quick-tap-ms = <0>;
-};
+
 
 // define timeout for some functions
 //#if !defined TIMEOUT_COMBO_2
