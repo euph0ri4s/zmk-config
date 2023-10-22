@@ -5,14 +5,15 @@
 #include <dt-bindings/zmk/mouse.h>
 // LAYERS
 
-#define LAYER_BASE  0
-#define LAYER_NAV   1
-#define LAYER_NUM   2
-#define LAYER_SYM   3
-#define LAYER_SYM2  4
-#define LAYER_BT    5
-#define LAYER_GAME  6
-#define LAYER_Gplus 7
+#define LAYER_BASE   0
+#define LAYER_ALPHA2 1
+#define LAYER_NAV    2
+#define LAYER_NUM    3
+#define LAYER_SYM    4
+#define LAYER_SYM2   5
+#define LAYER_BT     6
+#define LAYER_GAME   7
+#define LAYER_Gplus  8
 
 // MACROS
 // CONFIGRATION
@@ -63,20 +64,20 @@
     combos {
         compatible = "zmk,combos";
 
-        COMBO(Q, 0, 55, 10 12)
-        COMBO(W, 0, 55, 10 20)
-        COMBO(F, 0, 55, 11 12)
-        COMBO(P, 0, 55, 12 13)
-        COMBO(B, 0, 55, 11 13)
-        COMBO(G, 0, 50, 23 13)
-        COMBO(V, 0, 60, 22 23)
+        //COMBO(Q, 0, 55, 10 12)
+        //COMBO(W, 0, 55, 10 13)
+        //COMBO(F, 0, 55, 11 12)
+        //COMBO(P, 0, 55, 12 13)
+        //COMBO(B, 0, 55, 11 13)
+        //COMBO(G, 0, 50, 23 13)
+        //COMBO(V, 0, 60, 22 23)
         COMBO(COMMA, 0, 50, 16 18) 
         COMBO(DOT, 0, 50, 16 27)
-        COMBO(U, 0, 50, 16 26)
-        COMBO(Y, 0, 60, 17 18)
-        COMBO(MINUS, 0, 50, 17 18 19)
-        COMBO(M, 0, 50, 19 16)
-        COMBO(FSLH, 0, 35, 26 17)
+        //COMBO(U, 0, 50, 16 26)
+        //COMBO(Y, 0, 60, 17 18)
+        //COMBO(MINUS, 0, 50, 17 18 19)
+        //COMBO(M, 0, 50, 19 16)
+        //COMBO(FSLH, 0, 35, 26 17)
         COMBO(LBKT, 3, 50, 12 13)
         COMBO(RBKT, 3, 50, 16 17)
         COMBO(LBRC, 3, 50, 22 23)
@@ -93,7 +94,7 @@
         COMBO(N9, 2, 50, 22 23)
         COMBO(DEL, 0, 50, 26 28)
         COMBO(ESC, 0, 50, 20 21)
-        COMBO(ENTER, 0, 50, 26 27)
+        //COMBO(ENTER, 0, 50, 26 27)
     };
 
     keymap {
@@ -102,21 +103,31 @@
         base_layer {
             label = "LAYER_BASE";
             bindings = <
-&kp W           &kp F       &kp P         &kp B         &none     &none  &kp K         &kp U       &kp Y       &kp MINUS      
-&hm LGUI A      &hm LALT R  &hm LCTRL S   &hm LSHIFT T  &none     &none  &hm LSHIFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
-&lt LAYER_BT V  &kp X       &kp C         &kp D         &none     &none  &kp H         &kp M       &kp Z       &lt LAYER_SYM2 L
-          &trans  &lt LAYER_NAV SPACE  &lt LAYER_SYM BACKSPACE    &lt LAYER_BT TAB     &lt LAYER_NUM ENTER
+&none           &none       &none         &none         &none    &none  &none         &none       &none       &none      
+&hm LGUI A      &hm LALT R  &hm LCTRL S   &hm LSHIFT T  &none    &none  &hm LSHIFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
+&lt LAYER_BT Z  &kp X       &kp C                &kp D  &none    &none  &kp H         &kp J       &kp K       &lt LAYER_SYM2 L
+          &none  &lt LAYER_NAV SPACE  &lt LAYER_SYM BACKSPACE    &lt LAYER_NUM TAB    &lt LAYER_ALPHA2 ENTER
             >;
 
             trackball-bindings = <&tmv_coarse>;
         };
 
+        alpha2_layer {
+            label = "LAYER_alpha2";
+            bindings = <
+&none      &none      &none     &none      &none    &none     &none     &none     &none     &none
+&trans     &kp W      &kp V     &kp G      &none    &none     &kp M     &kp trans &kp Y     &kp MINUS
+&kp Q      &kp F      &kp P     &kp B      &none    &none     &kp U     &kp DOT   &kp COMMA &kp FSLH
+                     &trans    &trans     &trans   &trans    &trans
+            >;
+        };
+
         nav_layer {
             label = "LAYER_NAV";
             bindings = <
-&trans    &trans     &trans    &trans       &trans    &trans     &trans          &trans    &trans    &trans      
-&trans    &mkp RCLK  &mkp MCLK &mkp LCLK    &trans    &trans     &kp LEFT        &kp DOWN  &kp UP    &kp RIGHT
-&kp H     &kp K      &kp J     &kp L        &trans    &trans     &kp LC(HOME)    &kp HOME  &kp END   &kp LC(END)
+&none     &none      &none     &none        &none    &none     &none           &none     &none     &none      
+&trans    &mkp RCLK  &mkp MCLK &mkp LCLK    &none    &none     &kp LEFT        &kp DOWN  &kp UP    &kp RIGHT
+&kp L     &kp K      &kp J     &kp H        &none    &none     &kp LC(HOME)    &kp HOME  &kp END   &kp LC(END)
                      &trans    &trans       &trans   &trans    &trans
             >;
         };
@@ -124,9 +135,9 @@
         number_layer {
             label = "LAYER_NUM";
             bindings = <
-&trans   &trans  &trans  &trans &trans    &trans     &trans   &trans    &trans      &trans      
-&kp DOT  &kp N4  &kp N5  &kp N6 &trans    &trans     &kp F5   &kp F6    &kp F7      &kp F8
-&kp N0   &kp N1  &kp N2  &kp N3 &trans    &trans     &kp F1   &kp F2    &kp F3      &kp F4
+&none    &none   &none   &none  &none    &none     &none    &none     &none       &none      
+&kp DOT  &kp N4  &kp N5  &kp N6 &none    &none     &kp F5   &kp F6    &kp F7      &kp F8
+&kp N0   &kp N1  &kp N2  &kp N3 &none    &none     &kp F1   &kp F2    &kp F3      &kp F4
                  &trans  &trans &trans   &trans  &trans
             >;
         };
@@ -134,9 +145,9 @@
         symbol_layer {
             label = "LAYER_SYM";
             bindings = <
-&trans     &trans     &trans    &trans     &trans    &trans     &trans    &trans    &trans    &trans      
-&kp EXCL   &kp AT     &kp HASH  &kp DLLR   &trans    &trans     &kp AMPS  &kp STAR  &kp DQT   &kp SQT
-&kp UNDER  &kp EQUAL  &kp PLUS  &kp PRCNT  &trans    &trans     &kp BSLH  &kp PIPE  &kp SEMI  &kp COLON
+&none      &none      &none     &none      &none    &none     &none     &none     &none     &none      
+&kp EXCL   &kp AT     &kp HASH  &kp DLLR   &none    &none     &kp AMPS  &kp STAR  &kp DQT   &kp SQT
+&kp UNDER  &kp EQUAL  &kp PLUS  &kp PRCNT  &none    &none     &kp BSLH  &kp PIPE  &kp SEMI  &kp COLON
                       &trans    &trans     &trans   &trans    &trans
             >;
         };
@@ -144,19 +155,19 @@
         symbol2_layer {
             label = "LAYER_SYM2";
             bindings = <
-&trans        &trans &trans  &trans    &trans    &trans     &trans    &trans          &trans            &trans      
-&kp GRAVE     &trans &trans  &kp INT5  &trans    &trans     &kp INT4  &trans          &trans            &trans
-&kp LS(INT1)  &trans &trans  &trans    &trans    &trans     &kp INT3  &kp LESS_THAN   &kp GREATER_THAN  &trans
-                     &trans  &trans    &trans   &trans    &trans
+&none         &none     &none   &none     &none    &none     &none     &none           &none             &none      
+&kp GRAVE     &kp TILDE &trans  &kp INT5  &none    &none     &kp INT4  &trans          &trans            &trans
+&kp LS(INT1)  &trans    &trans  &trans    &none    &none     &kp INT3  &kp LESS_THAN   &kp GREATER_THAN  &trans
+                        &trans  &trans    &trans   &trans    &trans
             >;
         };
 
         bt_layer {
             label = "LAYER_BT";
             bindings = <
-&trans      &trans        &trans        &trans          &trans    &trans     &trans        &trans        &trans        &trans      
-&bt BT_CLR  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1    &trans    &trans     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans
-&trans      &trans        &trans        &to LAYER_GAME  &trans    &trans     &trans        &trans        &trans        &bt BT_CLR
+&none       &none         &none         &none           &none    &none     &none         &none         &none         &none      
+&bt BT_CLR  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1    &none    &none     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
+&trans      &trans        &trans        &to LAYER_GAME  &none    &none     &trans        &trans        &trans        &bt BT_CLR
             &mkp MCLK     &mkp LCLK     &mkp RCLK       &mkp RCLK  &mkp LCLK
             >;
             trackball-bindings = <&tsl_fine>;
@@ -165,19 +176,19 @@
         game_layer {
             label = "LAYER_GAME";
             bindings = <
-&trans     &trans &trans     &trans &trans              &trans     &trans      &trans  &trans  &trans      
-&kp LSHFT  &kp A  &kp W      &kp D  &trans              &trans     &mkp LCLK   &kp Q   &kp E   &kp R
-&kp LCTRL  &kp E  &kp S      &kp F  &trans              &trans     &kp N1      &kp N2  &kp N3  &kp N4
-        &kp LALT  &kp SPACE  &lt LAYER_Gplus ESC       &kp M   &kp ENTER
+&none      &none  &none      &none  &none              &none     &none       &none   &none   &none      
+&kp LSHFT  &kp A  &kp W      &kp D  &none              &none     &mkp LCLK   &kp Q   &kp E   &kp R
+&kp LCTRL  &kp V  &kp S      &kp F  &none              &none     &kp N1      &kp N2  &kp N3  &kp N4
+        &kp LALT  &kp SPACE  &lt LAYER_Gplus ESC       &kp RCLK  &kp ENTER
             >;
         };
 
         game+_layer {
             label = "LAYER_Gplus";
             bindings = <
-&trans   &trans  &trans  &trans    &trans      &trans   &trans  &trans  &trans  &trans      
-&kp N1   &kp N2  &kp N3  &kp N4    &trans      &trans   &kp N   &kp E   &kp I   &kp O
-&kp TAB  &kp V   &kp C   &kp T     &trans      &trans   &kp F1  &kp F2  &kp F3  &to 0
+&none    &none   &none   &none     &none      &none   &none   &none   &none   &none      
+&kp F1   &kp F2  &kp F3  &kp F4    &none      &none   &kp N   &kp E   &kp I   &kp O
+&kp TAB  &kp M   &kp C   &kp T     &none      &none   &kp H   &kp J   &kp K   &to 0
                  &trans  &trans    &trans     &trans  &trans
             >;
         };
@@ -300,7 +311,7 @@
 //             &kp LG(N1) &kp LG(N2) &kp LG(N3) &kp LG(N4) &kp LG(N5)     &caps_word &kp HOME   &kp PG_DN    &kp PG_UP    &kp END
 //             &kp LGUI   &mkp RCLK  &mkp MCLK  &mkp LCLK  &kp U_CLIP     &kp U_SHOT &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT
 //             &kp U_UNDO &kp U_CUT  &kp U_COPY &kp U_PSTE &kp U_REDO     &kp C_PP   &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
-//                                   &trans      &trans      &trans          &kp RET    &kp BSPC   
+//                                   &none      &none      &none          &kp RET    &kp BSPC   
 //             >;
 //         };
 // 
@@ -310,7 +321,7 @@
 //             &bt BT_SEL 0 &kp F9 &kp F10 &kp F11   &kp F12     &kp EQUAL  &kp N7 &kp N8 &kp N9 &kp PLUS
 //             &bt BT_SEL 1 &kp F5 &kp F6  &kp F7    &kp F8      &kp ASTRK  &kp N4 &kp N5 &kp N6 &kp MINUS
 //             &bt BT_SEL 2 &kp F1 &kp F2  &kp F3    &kp F4      &kp N0     &kp N1 &kp N2 &kp N3 &kp FSLH
-//                                 &kp ESC &kp SPACE &kp BSPC    &bt BT_CLR &trans  &trans
+//                                 &kp ESC &kp SPACE &kp BSPC    &bt BT_CLR &none  &none
 //             >;
 //         };
 // 
