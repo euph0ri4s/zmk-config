@@ -116,7 +116,7 @@
             label = "LAYER_alpha2";
             bindings = <
 &none      &none      &none     &none      &none    &none     &none     &none     &none     &none
-&trans     &kp W      &kp V     &kp G      &none    &none     &kp M     &kp trans &kp Y     &kp MINUS
+&trans     &kp W      &kp V     &kp G      &none    &none     &kp M     &trans    &kp Y     &kp MINUS
 &kp Q      &kp F      &kp P     &kp B      &none    &none     &kp U     &kp DOT   &kp COMMA &kp FSLH
                      &trans    &trans     &trans   &trans    &trans
             >;
