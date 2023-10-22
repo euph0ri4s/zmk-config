@@ -31,6 +31,12 @@
     quick-tap-ms = <0>;
 };
 
+&ltalpha {
+    flavor = "tap-preferred";
+    tapping-term-ms = <50>;
+    quick-tap-ms = <0>;
+};
+
 // define timeout for some functions
 //#if !defined TIMEOUT_COMBO_2
 //#define TIMEOUT_COMBO_2 175
@@ -64,20 +70,8 @@
     combos {
         compatible = "zmk,combos";
 
-        //COMBO(Q, 0, 55, 10 12)
-        //COMBO(W, 0, 55, 10 13)
-        //COMBO(F, 0, 55, 11 12)
-        //COMBO(P, 0, 55, 12 13)
-        //COMBO(B, 0, 55, 11 13)
-        //COMBO(G, 0, 50, 23 13)
-        //COMBO(V, 0, 60, 22 23)
         COMBO(COMMA, 0, 50, 16 18) 
         COMBO(DOT, 0, 50, 16 27)
-        //COMBO(U, 0, 50, 16 26)
-        //COMBO(Y, 0, 60, 17 18)
-        //COMBO(MINUS, 0, 50, 17 18 19)
-        //COMBO(M, 0, 50, 19 16)
-        //COMBO(FSLH, 0, 35, 26 17)
         COMBO(LBKT, 3, 50, 12 13)
         COMBO(RBKT, 3, 50, 16 17)
         COMBO(LBRC, 3, 50, 22 23)
@@ -94,7 +88,6 @@
         COMBO(N9, 2, 50, 22 23)
         COMBO(DEL, 0, 50, 26 28)
         COMBO(ESC, 0, 50, 20 21)
-        //COMBO(ENTER, 0, 50, 26 27)
     };
 
     keymap {
