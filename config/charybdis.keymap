@@ -5,15 +5,14 @@
 #include <dt-bindings/zmk/mouse.h>
 // LAYERS
 
-#define LAYER_BASE   0
-#define LAYER_ALPHA2 1
-#define LAYER_NAV    2
-#define LAYER_NUM    3
-#define LAYER_SYM    4
-#define LAYER_SYM2   5
-#define LAYER_BT     6
-#define LAYER_GAME   7
-#define LAYER_Gplus  8
+#define LAYER_BASE  0
+#define LAYER_NAV   1
+#define LAYER_NUM   2
+#define LAYER_SYM   3
+#define LAYER_SYM2  4
+#define LAYER_BT    5
+#define LAYER_GAME  6
+#define LAYER_Gplus 7
 
 // MACROS
 // CONFIGRATION
@@ -64,20 +63,20 @@
     combos {
         compatible = "zmk,combos";
 
-        //COMBO(Q, 0, 55, 10 12)
-        //COMBO(W, 0, 55, 10 13)
-        //COMBO(F, 0, 55, 11 12)
-        //COMBO(P, 0, 55, 12 13)
-        //COMBO(B, 0, 55, 11 13)
-        //COMBO(G, 0, 50, 23 13)
-        //COMBO(V, 0, 60, 22 23)
+        COMBO(Q, 0, 55, 10 12)
+        COMBO(W, 0, 55, 10 13)
+        COMBO(F, 0, 55, 11 12)
+        COMBO(P, 0, 55, 12 13)
+        COMBO(B, 0, 55, 11 13)
+        COMBO(G, 0, 50, 23 13)
+        COMBO(V, 0, 60, 22 23)
         COMBO(COMMA, 0, 50, 16 18) 
         COMBO(DOT, 0, 50, 16 27)
-        //COMBO(U, 0, 50, 16 26)
-        //COMBO(Y, 0, 60, 17 18)
-        //COMBO(MINUS, 0, 50, 17 18 19)
-        //COMBO(M, 0, 50, 19 16)
-        //COMBO(FSLH, 0, 35, 26 17)
+        COMBO(U, 0, 50, 16 26)
+        COMBO(Y, 0, 60, 17 18)
+        COMBO(MINUS, 0, 50, 17 18 19)
+        COMBO(M, 0, 50, 19 16)
+        COMBO(FSLH, 0, 35, 26 17)
         COMBO(LBKT, 3, 50, 12 13)
         COMBO(RBKT, 3, 50, 16 17)
         COMBO(LBRC, 3, 50, 22 23)
@@ -94,7 +93,7 @@
         COMBO(N9, 2, 50, 22 23)
         COMBO(DEL, 0, 50, 26 28)
         COMBO(ESC, 0, 50, 20 21)
-        //COMBO(ENTER, 0, 50, 26 27)
+        COMBO(ENTER, 0, 50, 26 27)
     };
 
     keymap {
@@ -106,20 +105,10 @@
 &none           &none       &none         &none         &none    &none  &none         &none       &none       &none      
 &hm LGUI A      &hm LALT R  &hm LCTRL S   &hm LSHIFT T  &none    &none  &hm LSHIFT N  &hm LCTRL E &hm LALT I  &hm LGUI O
 &lt LAYER_BT Z  &kp X       &kp C                &kp D  &none    &none  &kp H         &kp J       &kp K       &lt LAYER_SYM2 L
-          &none  &lt LAYER_NAV SPACE  &lt LAYER_SYM BACKSPACE    &lt LAYER_NUM TAB    &lt LAYER_ALPHA2 ENTER
+          &none  &lt LAYER_NAV SPACE  &lt LAYER_SYM BACKSPACE    &lt LAYER_BT TAB     &lt LAYER_NUM ENTER
             >;
 
             trackball-bindings = <&tmv_coarse>;
-        };
-
-        alpha2_layer {
-            label = "LAYER_alpha2";
-            bindings = <
-&none      &none      &none     &none      &none    &none     &none     &none     &none     &none
-&trans     &kp W      &kp V     &kp G      &none    &none     &kp M     &trans    &kp Y     &kp MINUS
-&kp Q      &kp F      &kp P     &kp B      &none    &none     &kp U     &kp DOT   &kp COMMA &kp FSLH
-                     &trans    &trans     &trans   &trans    &trans
-            >;
         };
 
         nav_layer {
@@ -155,10 +144,10 @@
         symbol2_layer {
             label = "LAYER_SYM2";
             bindings = <
-&none         &none     &none   &none     &none    &none     &none     &none           &none             &none      
-&kp GRAVE     &kp TILDE &trans  &kp INT5  &none    &none     &kp INT4  &trans          &trans            &trans
-&kp LS(INT1)  &trans    &trans  &trans    &none    &none     &kp INT3  &kp LESS_THAN   &kp GREATER_THAN  &trans
-                        &trans  &trans    &trans   &trans    &trans
+&none         &none  &none   &none     &none    &none     &none     &none           &none             &none      
+&kp GRAVE     &trans &trans  &kp INT5  &none    &none     &kp INT4  &trans          &trans            &trans
+&kp LS(INT1)  &trans &trans  &trans    &none    &none     &kp INT3  &kp LESS_THAN   &kp GREATER_THAN  &trans
+                     &trans  &trans    &trans   &trans    &trans
             >;
         };
 
@@ -178,8 +167,8 @@
             bindings = <
 &none      &none  &none      &none  &none              &none     &none       &none   &none   &none      
 &kp LSHFT  &kp A  &kp W      &kp D  &none              &none     &mkp LCLK   &kp Q   &kp E   &kp R
-&kp LCTRL  &kp V  &kp S      &kp F  &none              &none     &kp N1      &kp N2  &kp N3  &kp N4
-        &kp LALT  &kp SPACE  &lt LAYER_Gplus ESC       &kp RCLK  &kp ENTER
+&kp LCTRL  &kp E  &kp S      &kp F  &none              &none     &kp N1      &kp N2  &kp N3  &kp N4
+        &kp LALT  &kp SPACE  &lt LAYER_Gplus ESC       &kp M   &kp ENTER
             >;
         };
 
@@ -187,8 +176,8 @@
             label = "LAYER_Gplus";
             bindings = <
 &none    &none   &none   &none     &none      &none   &none   &none   &none   &none      
-&kp F1   &kp F2  &kp F3  &kp F4    &none      &none   &kp N   &kp E   &kp I   &kp O
-&kp TAB  &kp M   &kp C   &kp T     &none      &none   &kp H   &kp J   &kp K   &to 0
+&kp N1   &kp N2  &kp N3  &kp N4    &none      &none   &kp N   &kp E   &kp I   &kp O
+&kp TAB  &kp V   &kp C   &kp T     &none      &none   &kp F1  &kp F2  &kp F3  &to 0
                  &trans  &trans    &trans     &trans  &trans
             >;
         };
