@@ -90,9 +90,9 @@
         COMBO(F11, 2, 50, 27 28)
         COMBO(F12, 2, 50, 28 29)
         COMBO(N7, 2, 50, 11 21)
-        COMBO(N8, 2, 50, 11 22)
+        COMBO(N8, 2, 50, 11 13)
         COMBO(N9, 2, 50, 13 23)
-        COMBO(DEL, 1, 50, 17 19)
+        COMBO(DEL, 0, 50, 26 28)
         COMBO(ENTER, 0, 50, 26 27)
     };
 
