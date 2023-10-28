@@ -63,6 +63,7 @@
     combos {
         compatible = "zmk,combos";
 
+        COMBO(ESC, 0, 50, 20 21)
         COMBO(Q, 0, 55, 10 20)
         COMBO(W, 0, 55, 11 21)
         COMBO(F, 0, 55, 11 12)
@@ -92,7 +93,6 @@
         COMBO(N8, 2, 50, 21 23)
         COMBO(N9, 2, 50, 22 23)
         COMBO(DEL, 0, 50, 26 28)
-        COMBO(ESC, 0, 50, 20 21)
         COMBO(ENTER, 0, 50, 26 27)
     };
 
