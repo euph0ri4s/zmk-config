@@ -92,7 +92,7 @@
         COMBO(N7, 2, 50, 11 21)
         COMBO(N8, 2, 50, 11 13)
         COMBO(N9, 2, 50, 13 23)
-        COMBO(DEL, 0, 50, 26 28)
+        COMBO(DEL, 0, 50, 17 18)
         COMBO(ENTER, 0, 50, 26 27)
     };
 
