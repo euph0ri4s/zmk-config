@@ -88,12 +88,12 @@
         COMBO(N7, 2, 50, 11 21)
         COMBO(N8, 2, 50, 11 13)
         COMBO(N9, 2, 50, 13 23)
+        COMBO(LPAR, 3, 50, 12 13)
+        COMBO(RPAR, 3, 50, 16 17)
         COMBO(LBKT, 3, 50, 22 23)
         COMBO(RBKT, 3, 50, 26 27)
         COMBO(LBRC, 3, 50, 13 23)
         COMBO(RBRC, 3, 50, 16 26)
-        COMBO(LPAR, 3, 50, 12 13)
-        COMBO(RPAR, 3, 50, 16 17)
     };
 
     keymap {
