@@ -129,7 +129,6 @@
 &kp N0   &kp N1  &kp N2  &kp N3 &none    &none     &kp F1   &kp F2    &kp F3      &kp F4
                  &trans  &trans &trans   &trans  &trans
             >;
-            trackball-bindings = <&tmv>;
         };
 
         symbol_layer {
