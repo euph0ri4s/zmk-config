@@ -75,7 +75,7 @@
         COMBO(DOT, 0, 50, 17 26)
         COMBO(U, 0, 50, 16 17)
         COMBO(Y, 0, 60, 17 18)
-        COMBO(MINUS, 0, 50, 17 18 19)
+        COMBO(MINUS, 0, 50, 18 19)
         COMBO(M, 0, 50, 26 27)
         COMBO(FSLH, 0, 35, 27 28)
         COMBO(LBKT, 3, 50, 12 13)
@@ -129,6 +129,7 @@
 &kp N0   &kp N1  &kp N2  &kp N3 &none    &none     &kp F1   &kp F2    &kp F3      &kp F4
                  &trans  &trans &trans   &trans  &trans
             >;
+            trackball-bindings = <&tmv>;
         };
 
         symbol_layer {
@@ -149,6 +150,7 @@
 &kp LS(INT1)  &trans &trans  &trans    &none    &none      &kp INT3  &kp LESS_THAN   &kp GREATER_THAN  &trans
                      &trans  &trans    &trans   &mkp MCLK  &mkp LCLK
             >;
+            trackball-bindings = <&tsl>;
         };
 
         bt_layer {
