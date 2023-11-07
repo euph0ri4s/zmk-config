@@ -20,20 +20,16 @@
 		, <&xiao_d 1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&xiao_d 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		, <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		//, <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-		//, <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 		;
 };
 
 // trackball bus
 &xiao_spi {
 	status = "okay"; //okay
-	pinctrl-0 = <&spi2_default>;
-	pinctrl-names = "default";
 	//sck-pin = <8>;
-	//dipo = <10>; //mosi-pin = <10>;
-	//dopo = <9>;  //miso-pin = <9>; // same as mosi (3-wire spi)
-	//cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+	dipo = <10>; //mosi-pin = <10>;
+	dopo = <9>;  //miso-pin = <9>; // same as mosi (3-wire spi)
+	cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 };
 
 &trackball {
