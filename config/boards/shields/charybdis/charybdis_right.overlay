@@ -26,9 +26,11 @@
 // trackball bus
 &xiao_spi {
 	status = "okay"; //okay
-	sck-pin = <8>;
-	mosi-pin = <10>; // dipo = <10>;
-	miso-pin = <9>; // same as mosi (3-wire spi) // dopo = <9>;
+	//sck-pin = <8>;
+	// mosi-pin = <10>;
+	// miso-pin = <9>; // same as mosi (3-wire spi) 
+	dipo = <10>;
+	dopo = <9>;
 	cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 };
 
