@@ -161,7 +161,7 @@
             label = "LAYER_GAME";
             bindings = <
 &kp LSHFT  &kp A  &kp W      &kp D                     &mkp LCLK   &kp Q   &kp E   &kp R
-&kp ALT  &kp E  &kp S      &kp F                       &kp N1      &kp N2  &kp N3  &kp N4
+&kp LALT   &kp E  &kp S      &kp F                     &kp N1      &kp N2  &kp N3  &kp N4
                   &kp SPACE  &lt LAYER_Gplus ESC       &kp M   &kp ENTER
             >;
         };
