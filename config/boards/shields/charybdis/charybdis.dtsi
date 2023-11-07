@@ -41,7 +41,7 @@
 };
 
 &xiao_spi {
-	compatible = "atmel,sam0-spi";
+	compatible = "nordic,nrf-spi";
 	status = "disabled";
 
 	trackball: trackball@0 {
