@@ -26,7 +26,7 @@
 // trackball bus
 &xiao_spi {
 	status = "okay"; //okay
-	pinctrl-0 = <&sercom0_spi_default>;
+	pinctrl-0 = <&spi2_default>;
 	pinctrl-names = "default";
 	//sck-pin = <8>;
 	//dipo = <10>; //mosi-pin = <10>;
