@@ -26,10 +26,12 @@
 // trackball bus
 &xiao_spi {
 	status = "okay"; //okay
+	pinctrl-0 = <&sercom0_spi_default>;
+	pinctrl-names = "default";
 	//sck-pin = <8>;
-	dipo = <10>; //mosi-pin = <10>;
-	dopo = <9>;  //miso-pin = <9>; // same as mosi (3-wire spi)
-	cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+	//dipo = <10>; //mosi-pin = <10>;
+	//dopo = <9>;  //miso-pin = <9>; // same as mosi (3-wire spi)
+	//cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
 };
 
 &trackball {
