@@ -53,7 +53,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "homerow_mods";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <240>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -157,7 +157,7 @@
             bindings = <
 &none       &none         &none         &none           &none    &none     &none         &none         &none         &none      
 &bt BT_CLR  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1    &none    &none     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none
-&trans      &trans        &trans        &to LAYER_GAME  &none    &none     &trans        &trans        &trans        &bt BT_CLR
+&trans      &trans        &trans        &to LAYER_GAME  &none    &none     &trans        &trans        &bt BT_CLR    &trans
             &mkp MCLK     &mkp LCLK     &mkp RCLK       &mkp RCLK  &mkp LCLK
             >;
             trackball-bindings = <&tsl_fine>;
@@ -168,7 +168,7 @@
             bindings = <
 &none      &none  &none      &none  &none              &none     &none       &none   &none   &none      
 &kp LSHFT  &kp A  &kp W      &kp D  &none              &none     &mkp LCLK   &kp Q   &kp E   &kp R
-&kp LCTRL  &kp E  &kp S      &kp F  &none              &none     &kp N1      &kp N2  &kp N3  &kp N4
+&kp LCTRL  &kp V  &kp S      &kp F  &none              &none     &kp N1      &kp N2  &kp N3  &kp N4
         &kp LALT  &kp SPACE  &lt LAYER_Gplus ESC       &kp M   &kp ENTER
             >;
         };
@@ -177,8 +177,8 @@
             label = "LAYER_Gplus";
             bindings = <
 &none    &none   &none   &none     &none      &none   &none   &none   &none   &none      
-&kp N1   &kp N2  &kp N3  &kp N4    &none      &none   &kp N   &kp E   &kp I   &kp O
-&kp TAB  &kp V   &kp C   &kp T     &none      &none   &kp F1  &kp F2  &kp F3  &to 0
+&kp G    &kp H   &kp J   &kp T     &none      &none   &kp N   &kp M   &kp I   &kp O
+&kp TAB  &kp Z   &kp X   &kp C     &none      &none   &kp F1  &kp F2  &kp F3  &to 0
                  &trans  &trans    &trans     &trans  &trans
             >;
         };
